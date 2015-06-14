@@ -1,0 +1,35 @@
+﻿
+/* =============================================================
+   GENERAL STYLES
+ ============================================================ */
+body {
+    font-family: 'Open Sans', sans-serif;
+   
+}
+
+#input_item{
+	width: 1000px;
+	margin-right: 10px;
+	box-shadow: 10px 10px 5px #888888;
+	margin-bottom: 40px;
+}
+
+#btn_todo{
+   background: #D3D3D3;
+   z-index: 3;
+   box-shadow: 3;
+}
+
+#edit_item{
+	margin-left: 10px;
+	margin-right: 10px;
+}
+#edit_item_btn{
+	width: 40px;
+	margin-right: 20px;
+}
+
+#item_close_btn{
+	width: 40px;
+	margin-right: 20px;
+}
