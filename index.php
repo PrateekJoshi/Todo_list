@@ -8,7 +8,6 @@
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLE CSS -->
     <link href="assets/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="assets/css/bootstrap.icon-large.min.css" rel="stylesheet">
     <!-- CUSTOM STYLE CSS -->
     <link href="assets/css/style.css" rel="stylesheet" />    
 </head>
@@ -30,7 +29,7 @@
 
  <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
     <!-- CORE JQUERY  -->
-    <script src="assets/plugins/jquery-1.10.2.js"></script>
+    <script src="assets/plugins/jquery-2.1.4.min.js"></script>
     <!-- BOOTSTRAP SCRIPTS  -->
     <script src="assets/plugins/bootstrap.js"></script>
     <script src="myscript.js"></script>

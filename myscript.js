@@ -1,9 +1,7 @@
-// stores the reference to the XMLHttpRequest object
+
 var xmlHttp = createXmlHttpRequestObject();
-// retrieves the XMLHttpRequest object
 function createXmlHttpRequestObject()
 {
-// will store the reference to the XMLHttpRequest object
 var xmlHttp;
 // if running Internet Explorer
 if(window.ActiveXObject)
@@ -78,33 +76,34 @@ alert("There was a problem accessing the server: " + xmlHttp.statusText);
 }
 }
 
-function edit(){
+function edit(event){
+	event = event || window.event //For IE
 	node=event.target.parentNode;
 	var current_text=node.innerHTML;
 	current_html=node.parentNode.parentNode.innerHTML;
 	node.innerHTML=
     '<div class="row">'+
 	'<input type="text" class="col-md-8" id="edit_item" placeholder=\"'+jQuery(current_text).text()+'\">'
-    +'<button type="button" class="form btn btn-sm fa fa-check-square col-md-2 pull-right" onclick="done_edit()" id="edit_item_btn">'+'</button>'+
-    '<button type="button" class="form btn btn-sm fa fa-ban col-md-2 pull-right" onclick="item_back_btn(current_html)" id="item_close_btn">'+'</div>';
+    +'<button type="button" class="form btn btn-sm fa fa-check-square col-md-2 pull-right" onclick="done_edit(event)" id="edit_item_btn">'+'</button>'+
+    '<button type="button" class="form btn btn-sm fa fa-ban col-md-2 pull-right" onclick="item_back_btn(event,current_html)" id="item_close_btn">'+'</div>';
 }
 
-function done_edit(){
+function done_edit(event){
 node=event.target.parentNode;
 var text=$("#edit_item").val();
 console.log(text);
 var temp='<div class="alert alert-dismissible" role="alert" id="item_stack">'+
-  '<button type="button" class="close" data-dismiss="alert" aria-label="Close" onclick="edit()">'+'</button><button type="button" class="btn btn-default btn-xs fa fa-pencil" onclick="edit()"></button>&nbsp;&nbsp;<i>'+text+
-'</i>'+'<button type="button" class="form btn btn-sm glyphicon glyphicon-remove col-md-2 pull-right" onclick="item_close_btn()" id="item_close_btn">'+'</div>';
+  '<button type="button" class="close" data-dismiss="alert" aria-label="Close" ">'+'</button><button type="button" class="btn btn-default btn-xs fa fa-pencil" onclick="edit(event)"></button>&nbsp;&nbsp;<i>'+text+
+'</i>'+'<button type="button" class="form btn btn-sm glyphicon glyphicon-remove col-md-2 pull-right" onclick="item_close_btn(event)" id="item_close_btn">'+'</div>';
 node.parentNode.parentNode.innerHTML=temp;
 }
 
-function item_close_btn(){
+function item_close_btn(event){
 	node=event.target.parentNode;
 	node.remove();
 }
 
-function item_back_btn(current_html){
+function item_back_btn(event,current_html){
 	node=event.target.parentNode;
 	var temp=node.innerHTML;
 	node.parentNode.parentNode.innerHTML=current_html;
