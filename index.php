@@ -22,9 +22,12 @@
 	<button type="submit" class="btn btn-default col-md-1" id="btn_todo" onclick="process()">Add</button>
    </div>
 
-<div id="final_list">
+<div class="row">
+<div id="final_list" class="col-md-11">
 
 </div>
+</div>
+
 </div>
 
  <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
